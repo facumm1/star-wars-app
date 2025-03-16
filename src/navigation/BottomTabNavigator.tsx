@@ -36,7 +36,7 @@ export const BottomTabNavigator = () => {
               size={25}
             />
           ),
-          tabBarLabel: () => <Text>Inicio</Text>,
+          tabBarLabel: () => <Text>Home</Text>,
         }}
       />
       <Tab.Screen

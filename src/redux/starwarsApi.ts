@@ -15,8 +15,15 @@ export const starwarsApi = createApi({
     fetchPeople: builder.query({
       query: () => '/people',
     }),
+    fetchPeopleByName: builder.query({
+      query: (name: string) => `/people/?search=${name}`,
+    }),
   }),
 });
 
-export const {useFetchFilmsQuery, useFetchPlanetsQuery, useFetchPeopleQuery} =
-  starwarsApi;
+export const {
+  useFetchFilmsQuery,
+  useFetchPlanetsQuery,
+  useFetchPeopleQuery,
+  useFetchPeopleByNameQuery,
+} = starwarsApi;
