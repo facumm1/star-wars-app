@@ -1,3 +1,5 @@
+import {RouteProp} from '@react-navigation/native';
+
 export type FilmTypes = {
   title: string;
   episode_id: number;
@@ -13,6 +15,7 @@ export type FilmTypes = {
   created: string;
   edited: string;
   url: string;
+  contentType?: string;
 };
 
 export type PlanetTypes = {
@@ -30,6 +33,7 @@ export type PlanetTypes = {
   created: string;
   edited: string;
   url: string;
+  contentType?: string;
 };
 
 export type PeopleTypes = {
@@ -49,4 +53,15 @@ export type PeopleTypes = {
   created: string;
   edited: string;
   url: string;
+  contentType?: string;
+};
+
+export type ContentRouteType = RouteProp<
+  StackParamList,
+  'ContentDetailsScreen'
+>;
+
+type StackParamList = {
+  HomeScreen: undefined;
+  ContentDetailsScreen: undefined;
 };

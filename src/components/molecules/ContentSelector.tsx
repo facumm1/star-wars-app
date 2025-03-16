@@ -26,7 +26,7 @@ export const ContentSelector = ({
             backgroundColor: isFilmsSelected,
           },
         ]}>
-        <Text style={styles.text}>Películas</Text>
+        <Text style={styles.text}>Films</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -37,7 +37,7 @@ export const ContentSelector = ({
             backgroundColor: isPeopleSelected,
           },
         ]}>
-        <Text style={styles.text}>Personajes</Text>
+        <Text style={styles.text}>People</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -48,7 +48,7 @@ export const ContentSelector = ({
             backgroundColor: isPlanetsSelected,
           },
         ]}>
-        <Text style={styles.text}>Planetas</Text>
+        <Text style={styles.text}>Planets</Text>
       </TouchableOpacity>
     </View>
   );

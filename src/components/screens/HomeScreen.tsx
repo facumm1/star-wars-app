@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
@@ -8,20 +8,18 @@ import {FilmFlatlist, PeopleFlatlist, PlanetFlatlist} from '../organisms';
 
 type ContentType = 'films' | 'people' | 'planets';
 
+const contentMap = {
+  films: <FilmFlatlist />,
+  people: <PeopleFlatlist />,
+  planets: <PlanetFlatlist />,
+};
+
 export const HomeScreen = () => {
-  const [selectedContent, setSelectedContent] =
-    React.useState<ContentType>('films');
+  const tabBarHeight = useBottomTabBarHeight();
+  const [selectedContent, setSelectedContent] = useState<ContentType>('films');
 
   const handleContentChange = (content: ContentType) => {
     setSelectedContent(content);
-  };
-
-  const tabBarHeight = useBottomTabBarHeight();
-
-  const contentMap = {
-    films: <FilmFlatlist />,
-    people: <PeopleFlatlist />,
-    planets: <PlanetFlatlist />,
   };
 
   return (
@@ -35,7 +33,7 @@ export const HomeScreen = () => {
         />
 
         {/* Flatlist */}
-        {contentMap[selectedContent] || <Text>Contenido inválido</Text>}
+        {contentMap[selectedContent] || <Text>Invalid content</Text>}
       </View>
     </SafeAreaView>
   );
