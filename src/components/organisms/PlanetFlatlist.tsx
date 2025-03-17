@@ -13,7 +13,7 @@ export const PlanetFlatlist = () => {
     <FlatList
       ref={flatlistRef}
       style={{backgroundColor: '#edede9', width: '100%'}}
-      data={data?.results}
+      data={data}
       ListEmptyComponent={Loader}
       keyExtractor={({url}) => url}
       renderItem={({item}) => <PlanetCard item={item} />}

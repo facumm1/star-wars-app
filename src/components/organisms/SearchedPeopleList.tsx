@@ -14,7 +14,7 @@ export const SearchedPeopleList = ({fieldValue}: {fieldValue: string}) => {
     <FlatList
       ref={flatlistRef}
       style={{backgroundColor: '#edede9', width: '100%'}}
-      data={data?.results}
+      data={data}
       ListEmptyComponent={
         isFetching || fieldValue === undefined ? Loader : NoCharactersFound
       }

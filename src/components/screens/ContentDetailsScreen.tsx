@@ -15,14 +15,14 @@ interface Props {
   route: ContentRouteType;
 }
 
-type ContentType = 'film' | 'people' | 'planet';
+type TipoContenido = 'film' | 'people' | 'planet';
 
 export const ContentDetailsScreen = ({route}: Props) => {
   const {goBackNav} = useNavigate();
   const tabBarHeight = useBottomTabBarHeight();
 
   //TODO fix types here
-  const {contentType} = route.params;
+  const {tipoContenido} = route.params;
 
   const contentMap = {
     film: <FilmDetails details={route.params as unknown as FilmTypes} />,
@@ -37,7 +37,9 @@ export const ContentDetailsScreen = ({route}: Props) => {
           <Ionicons name="arrow-back" size={30} color="#000000" />
         </TouchableOpacity>
 
-        {contentMap[contentType as ContentType] || <Text>Invalid content</Text>}
+        {contentMap[tipoContenido as TipoContenido] || (
+          <Text>Invalid content</Text>
+        )}
       </View>
     </SafeAreaView>
   );
@@ -48,11 +50,11 @@ const FilmDetails = ({details}: {details: FilmTypes}) => {
     <View>
       <Text>Film details</Text>
 
-      <Text>Title: {details.title}</Text>
-      <Text>Episode: {details.episode_id}</Text>
+      <Text>Title: {details.titulo}</Text>
+      <Text>Episode: {details.episodio}</Text>
       <Text>Director: {details.director}</Text>
-      <Text>Producer: {details.producer}</Text>
-      <Text>Release date: {details.release_date}</Text>
+      <Text>Producer: {details.productor}</Text>
+      <Text>Release date: {details.estreno}</Text>
     </View>
   );
 };
@@ -61,12 +63,12 @@ const PeopleDetails = ({details}: {details: PeopleTypes}) => {
   return (
     <View>
       <Text>People details</Text>
-      <Text>Name: {details.name}</Text>
-      <Text>Height: {details.height}</Text>
-      <Text>Mass: {details.mass}</Text>
-      <Text>Hair color: {details.hair_color}</Text>
-      <Text>Skin color: {details.skin_color}</Text>
-      <Text>Eye color: {details.eye_color}</Text>
+      <Text>Name: {details.nombre}</Text>
+      <Text>Height: {details.altura}</Text>
+      <Text>Mass: {details.peso}</Text>
+      <Text>Hair color: {details.color_pelo}</Text>
+      <Text>Skin color: {details.color_piel}</Text>
+      <Text>Eye color: {details.color_ojos}</Text>
     </View>
   );
 };
@@ -75,15 +77,15 @@ const PlanetDetails = ({details}: {details: PlanetTypes}) => {
   return (
     <View>
       <Text>Planet details</Text>
-      <Text>Name: {details.name}</Text>
-      <Text>Rotation period: {details.rotation_period}</Text>
-      <Text>Orbital period: {details.orbital_period}</Text>
-      <Text>Diameter: {details.diameter}</Text>
-      <Text>Climate: {details.climate}</Text>
-      <Text>Gravity: {details.gravity}</Text>
-      <Text>Terrain: {details.terrain}</Text>
-      <Text>Surface water: {details.surface_water}</Text>
-      <Text>Population: {details.population}</Text>
+      <Text>Name: {details.nombre}</Text>
+      <Text>Rotation period: {details.periodo_rotacion}</Text>
+      <Text>Orbital period: {details.periodo_orbital}</Text>
+      <Text>Diameter: {details.diametro}</Text>
+      <Text>Climate: {details.clima}</Text>
+      <Text>Gravity: {details.gravedad}</Text>
+      <Text>Terrain: {details.terreno}</Text>
+      <Text>Surface water: {details.agua_superficie}</Text>
+      <Text>Population: {details.poblacion}</Text>
     </View>
   );
 };

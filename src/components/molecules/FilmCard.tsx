@@ -4,16 +4,19 @@ import {useNavigate} from '../../hooks/useNavigate';
 
 export const FilmCard = ({item}: {item: FilmTypes}) => {
   const {navigateTo} = useNavigate();
+  const {titulo, episodio, director, productor, estreno} = item;
 
   return (
     <TouchableOpacity
-      onPress={() => navigateTo('ContentDetailsScreen', {...item, contentType: 'film'})}
+      onPress={() =>
+        navigateTo('ContentDetailsScreen', {...item, tipoContenido: 'film'})
+      }
       style={styles.container}>
-      <Text>Title: {item.title}</Text>
-      <Text>Episode: {item.episode_id}</Text>
-      <Text>Director: {item.director}</Text>
-      <Text>Producer: {item.producer}</Text>
-      <Text>Release date: {item.release_date}</Text>
+      <Text>Title: {titulo}</Text>
+      <Text>Episode: {episodio}</Text>
+      <Text>Director: {director}</Text>
+      <Text>Producer: {productor}</Text>
+      <Text>Release date: {estreno}</Text>
     </TouchableOpacity>
   );
 };

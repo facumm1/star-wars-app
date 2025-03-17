@@ -6,15 +6,17 @@ import {useNavigate} from '../../hooks/useNavigate';
 export const PlanetCard = ({item}: {item: PlanetTypes}) => {
   const {navigateTo} = useNavigate();
 
+  const {nombre, terreno, clima} = item;
+
   return (
     <TouchableOpacity
       onPress={() =>
-        navigateTo('ContentDetailsScreen', {...item, contentType: 'planet'})
+        navigateTo('ContentDetailsScreen', {...item, tipoContenido: 'planet'})
       }
       style={styles.container}>
-      <Text>Name: {item.name}</Text>
-      <Text>Terrain: {item.terrain}</Text>
-      <Text>Weather: {item.climate}</Text>
+      <Text>Name: {nombre}</Text>
+      <Text>Terrain: {terreno}</Text>
+      <Text>Weather: {clima}</Text>
     </TouchableOpacity>
   );
 };

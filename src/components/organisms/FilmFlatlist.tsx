@@ -13,9 +13,9 @@ export const FilmFlatlist = () => {
     <FlatList
       ref={flatlistRef}
       style={{backgroundColor: '#edede9', width: '100%'}}
-      data={data?.results}
+      data={data}
       ListEmptyComponent={Loader}
-      keyExtractor={({episode_id}) => episode_id.toString()}
+      keyExtractor={({episodio}) => episodio.toString()}
       renderItem={({item}) => <FilmCard item={item} />}
     />
   );

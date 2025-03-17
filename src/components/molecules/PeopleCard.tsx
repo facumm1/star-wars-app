@@ -6,15 +6,17 @@ import {useNavigate} from '../../hooks/useNavigate';
 export const PeopleCard = ({item}: {item: PeopleTypes}) => {
   const {navigateTo} = useNavigate();
 
+  const {nombre, altura, peso} = item;
+
   return (
     <TouchableOpacity
       onPress={() =>
-        navigateTo('ContentDetailsScreen', {...item, contentType: 'people'})
+        navigateTo('ContentDetailsScreen', {...item, tipoContenido: 'people'})
       }
       style={styles.container}>
-      <Text>Name: {item.name}</Text>
-      <Text>Height: {item.height}</Text>
-      <Text>Mass: {item.mass}</Text>
+      <Text>Name: {nombre}</Text>
+      <Text>Height: {altura}</Text>
+      <Text>Mass: {peso}</Text>
     </TouchableOpacity>
   );
 };
