@@ -50,9 +50,7 @@ Tambien puedes consultar el texto de introduccion de la película o las aparicio
 
 Algunas imagenes de ejemplo:
 
-[https://i.imgur.com/l6ZJhbF]
-[https://i.imgur.com/E25OGjt] [https://i.imgur.com/ZltsZ2x]
-[https://i.imgur.com/X5hkLpK] [https://i.imgur.com/6hDwePk]
+[https://postimg.cc/gallery/mk6865H]
 
 **Pantalla de búsqueda**
 En la pantalla de búsqueda, puedes buscar personajes por su nombre. Recuerda que para iniciar la busqueda debes escribir al menos 3 caracteres.
@@ -61,5 +59,4 @@ Tambien puedes consultar por las apariciones de un personaje en ciertas películ
 
 Algunas imagenes de ejemplo:
 
-[https://i.imgur.com/4iLkgAs] [https://i.imgur.com/yeK0eWy]
-[https://i.imgur.com/6hDwePk]
+[https://postimg.cc/gallery/PjFRbfM]
