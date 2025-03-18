@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 
@@ -23,7 +23,19 @@ export const SearchScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={[styles.container, {marginBottom: tabBarHeight * 1.7}]}>
-        <Text style={styles.screenTitle}>Search people</Text>
+        <View
+          style={{
+            width: '90%',
+            flexDirection: 'row',
+            marginVertical: 15,
+            alignItems: 'center',
+          }}>
+          <Image
+            source={require('../../../assets/images/chewie.png')}
+            style={{width: 35, height: 35, marginRight: 10}}
+          />
+          <Text style={styles.screenTitle}>Search characters</Text>
+        </View>
 
         <SearchBar
           fieldValue={fieldValue}
@@ -45,11 +57,11 @@ export const SearchScreen = () => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#edede9',
+    backgroundColor: '#F4F4F4',
   },
   container: {
     width: '100%',
     alignItems: 'center',
   },
-  screenTitle: {width: '90%', fontSize: 28, marginVertical: 15},
+  screenTitle: {fontSize: 28},
 });

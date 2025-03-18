@@ -32,7 +32,7 @@ export const PlanetDetails = ({details}: {details: PlanetTypes}) => {
         />
       </ImageBackground>
 
-      <View style={styles.peopleDetailsBox}>
+      <View style={styles.planetDetailsBox}>
         <View style={styles.header}>
           <Text style={{color: '#000', fontSize: 22, fontWeight: 600}}>
             {nombre}
@@ -91,11 +91,11 @@ export const PlanetDetails = ({details}: {details: PlanetTypes}) => {
 const styles = StyleSheet.create({
   scrollView: {width: '100%', height: '100%', backgroundColor: '#000'},
   image: {width: '100%', height: 300},
-  peopleDetailsBox: {
+  planetDetailsBox: {
     padding: 15,
     borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
-    backgroundColor: '#fffff0',
+    backgroundColor: '#F4F4F4',
     height: '100%',
   },
   header: {

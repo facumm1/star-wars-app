@@ -16,7 +16,7 @@ export const SearchBar = ({
 }: Props) => {
   return (
     <View style={styles.searchBar}>
-      <Ionicons style={styles.icon} name="search" size={25} color={'#000000'} />
+      <Ionicons style={styles.icon} name="search" size={25} color={'#60CCDE'} />
 
       <TextInput
         value={fieldValue}

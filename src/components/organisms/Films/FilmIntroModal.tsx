@@ -1,13 +1,15 @@
 import {
+  Animated,
+  Easing,
   ImageBackground,
   Modal,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
 } from 'react-native';
 import Ionicons from '@react-native-vector-icons/ionicons';
+import {useEffect, useRef} from 'react';
 
 interface Props {
   apertura: string;
@@ -26,6 +28,20 @@ export const FilmIntroModal = ({
   modal,
   toggleModal,
 }: Props) => {
+  const scrollY = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    if (modal) {
+      scrollY.setValue(0);
+      Animated.timing(scrollY, {
+        toValue: -1000,
+        duration: 25000,
+        easing: Easing.linear,
+        useNativeDriver: true,
+      }).start();
+    }
+  }, [modal, scrollY]);
+
   return (
     <Modal
       animationType="fade"
@@ -33,19 +49,21 @@ export const FilmIntroModal = ({
       visible={modal}
       onRequestClose={() => toggleModal(false)}>
       <ImageBackground resizeMode="cover" source={{uri: spacebg}}>
-        <ScrollView style={{width: '100%', height: '100%'}}>
-          <TouchableOpacity
-            onPress={() => toggleModal()}
-            style={styles.backBtn}>
-            <Ionicons name="arrow-back" size={30} color="#FFF" />
-          </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggleModal()} style={styles.backBtn}>
+          <Ionicons name="arrow-back" size={30} color="#FFF" />
+        </TouchableOpacity>
 
-          <View style={{marginTop: 25}}>
+        <ScrollView style={{width: '100%', height: '100%'}}>
+          <Animated.View
+            style={[
+              styles.crawlContainer,
+              {transform: [{translateY: scrollY}]},
+            ]}>
             <Text style={styles.title}>EPISODE {episodio}</Text>
             <Text style={styles.title}>{titulo}</Text>
-          </View>
 
-          <Text style={styles.crawl}>{apertura}</Text>
+            <Text style={styles.crawl}>{apertura}</Text>
+          </Animated.View>
         </ScrollView>
       </ImageBackground>
     </Modal>
@@ -58,7 +76,13 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: '600',
     textAlign: 'center',
-    bottom: -25,
+    bottom: -50,
+    transform: [{perspective: 800}, {rotateX: '30deg'}],
+  },
+  crawlContainer: {
+    width: '100%',
+    alignItems: 'center',
+    marginTop: '100%', // Empieza desde abajo
   },
   crawl: {
     fontSize: 22,

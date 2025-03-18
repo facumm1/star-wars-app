@@ -1,7 +1,6 @@
 import React from 'react';
 
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Platform, Text} from 'react-native';
 import {SearchStackNavigator} from './SearchStackNavigator';
 import Ionicons from '@react-native-vector-icons/ionicons';
 import {HomeStackNavigator} from './HomeStackNavigator';
@@ -19,9 +18,13 @@ export const BottomTabNavigator = () => {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          backgroundColor: '#FFFFFF',
-          height: Platform.OS === 'android' ? 70 : 90,
+          backgroundColor: '#384A56',
+          height: 50,
+          paddingTop: 5,
           borderTopWidth: 0,
+          borderTopRightRadius: 30,
+          borderTopLeftRadius: 30,
+          position: 'absolute',
           elevation: 0,
         },
       }}>
@@ -29,28 +32,28 @@ export const BottomTabNavigator = () => {
         name="HomeStackNavigator"
         component={HomeStackNavigator}
         options={{
+          tabBarShowLabel: false,
           tabBarIcon: ({focused}: {focused: boolean}) => (
             <Ionicons
-              name={focused ? 'home-sharp' : 'home-outline'}
-              color={'#000000'}
+              name={'home-outline'}
+              color={focused ? '#60CCDE' : '#FFF'}
               size={25}
             />
           ),
-          tabBarLabel: () => <Text>Home</Text>,
         }}
       />
       <Tab.Screen
         name="SearchStackNavigator"
         component={SearchStackNavigator}
         options={{
+          tabBarShowLabel: false,
           tabBarIcon: ({focused}: {focused: boolean}) => (
             <Ionicons
-              name={focused ? 'search' : 'search-outline'}
-              color={'#000000'}
+              name={'search-outline'}
+              color={focused ? '#60CCDE' : '#FFF'}
               size={25}
             />
           ),
-          tabBarLabel: () => <Text>Search</Text>,
         }}
       />
     </Tab.Navigator>

@@ -11,10 +11,14 @@ export const ContentSelector = ({
   selectedContent,
   handleContentChange,
 }: Props) => {
-  const isFilmsSelected = selectedContent === 'films' ? '#d4a373' : '#FFFFFF';
-  const isPeopleSelected = selectedContent === 'people' ? '#d4a373' : '#FFFFFF';
+  const isFilmsSelected = selectedContent === 'films' ? '#60CCDE' : '#FFFFFF';
+  const isPeopleSelected = selectedContent === 'people' ? '#60CCDE' : '#FFFFFF';
   const isPlanetsSelected =
-    selectedContent === 'planets' ? '#d4a373' : '#FFFFFF';
+    selectedContent === 'planets' ? '#60CCDE' : '#FFFFFF';
+
+  const filmsColor = selectedContent === 'films' ? '#60CCDE' : '#000';
+  const peopleColor = selectedContent === 'people' ? '#60CCDE' : '#000';
+  const planetColor = selectedContent === 'planets' ? '#60CCDE' : '#000';
 
   return (
     <View style={styles.container}>
@@ -23,10 +27,11 @@ export const ContentSelector = ({
         style={[
           styles.button,
           {
-            backgroundColor: isFilmsSelected,
+            borderColor: isFilmsSelected,
+            borderWidth: 2,
           },
         ]}>
-        <Text style={styles.text}>Films</Text>
+        <Text style={[styles.text, {color: filmsColor}]}>Films</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -34,10 +39,11 @@ export const ContentSelector = ({
         style={[
           styles.button,
           {
-            backgroundColor: isPeopleSelected,
+            borderColor: isPeopleSelected,
+            borderWidth: 2,
           },
         ]}>
-        <Text style={styles.text}>People</Text>
+        <Text style={[styles.text, {color: peopleColor}]}>People</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
@@ -45,10 +51,11 @@ export const ContentSelector = ({
         style={[
           styles.button,
           {
-            backgroundColor: isPlanetsSelected,
+            borderColor: isPlanetsSelected,
+            borderWidth: 2,
           },
         ]}>
-        <Text style={styles.text}>Planets</Text>
+        <Text style={[styles.text, {color: planetColor}]}>Planets</Text>
       </TouchableOpacity>
     </View>
   );
@@ -62,11 +69,11 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   button: {
-    backgroundColor: '#d4a373',
+    backgroundColor: '#FFFFFF',
     borderRadius: 50,
     paddingHorizontal: 10,
     paddingVertical: 2.5,
     marginHorizontal: 2.5,
   },
-  text: {color: '#000', fontSize: 16},
+  text: {color: '#000', fontSize: 16, fontWeight: 500},
 });

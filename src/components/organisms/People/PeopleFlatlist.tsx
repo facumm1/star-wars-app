@@ -12,7 +12,7 @@ export const PeopleFlatlist = () => {
   return (
     <FlatList
       ref={flatlistRef}
-      style={{backgroundColor: '#edede9', width: '100%'}}
+      style={{backgroundColor: '#F4F4F4', width: '100%'}}
       data={data}
       numColumns={2}
       ListEmptyComponent={Loader}
