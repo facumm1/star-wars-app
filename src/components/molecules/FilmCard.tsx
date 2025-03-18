@@ -1,10 +1,11 @@
+import {memo} from 'react';
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 import {FilmTypes} from '../../types/responseTypes';
 import {useNavigate} from '../../hooks/useNavigate';
 import {filmImages, imageNotAvailable} from '../../util/images';
 
-export const FilmCard = ({item}: {item: FilmTypes}) => {
+export const FilmCard = memo(({item}: {item: FilmTypes}) => {
   const {navigateTo} = useNavigate();
   const {titulo, episodio} = item;
 
@@ -31,7 +32,7 @@ export const FilmCard = ({item}: {item: FilmTypes}) => {
       </View>
     </TouchableOpacity>
   );
-};
+});
 
 const styles = StyleSheet.create({
   container: {

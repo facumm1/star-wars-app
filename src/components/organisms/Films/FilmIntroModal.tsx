@@ -19,7 +19,7 @@ interface Props {
   toggleModal: (bool?: boolean) => void;
 }
 
-const spacebg = 'https://cdn.wallpapersafari.com/38/0/tNfnSd.png';
+const spacebg = require('../../../../assets/images/spacebg.jpg');
 
 export const FilmIntroModal = ({
   episodio,
@@ -48,7 +48,7 @@ export const FilmIntroModal = ({
       transparent={true}
       visible={modal}
       onRequestClose={() => toggleModal(false)}>
-      <ImageBackground resizeMode="cover" source={{uri: spacebg}}>
+      <ImageBackground resizeMode="cover" source={spacebg}>
         <TouchableOpacity onPress={() => toggleModal()} style={styles.backBtn}>
           <Ionicons name="arrow-back" size={30} color="#FFF" />
         </TouchableOpacity>
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   crawlContainer: {
     width: '100%',
     alignItems: 'center',
-    marginTop: '100%', // Empieza desde abajo
+    marginTop: '100%',
   },
   crawl: {
     fontSize: 22,

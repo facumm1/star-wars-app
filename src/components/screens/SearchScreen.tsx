@@ -5,8 +5,10 @@ import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 
 import {useField, useDebouncedValue} from '../../hooks';
 import {KeepWritingText} from '../atoms/KeepWritingText';
-import {SearchedPeopleList} from '../organisms';
 import {SearchBar} from '../molecules/SearchBar';
+import {SearchedPeopleList} from '../organisms';
+
+const chewieLogo = require('../../../assets/images/chewie.png');
 
 export const SearchScreen = () => {
   const tabBarHeight = useBottomTabBarHeight();
@@ -23,17 +25,8 @@ export const SearchScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={[styles.container, {marginBottom: tabBarHeight * 1.7}]}>
-        <View
-          style={{
-            width: '90%',
-            flexDirection: 'row',
-            marginVertical: 15,
-            alignItems: 'center',
-          }}>
-          <Image
-            source={require('../../../assets/images/chewie.png')}
-            style={{width: 35, height: 35, marginRight: 10}}
-          />
+        <View style={styles.titleLogo}>
+          <Image source={chewieLogo} style={styles.chewieLogo} />
           <Text style={styles.screenTitle}>Search characters</Text>
         </View>
 
@@ -64,4 +57,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   screenTitle: {fontSize: 28},
+  titleLogo: {
+    width: '90%',
+    flexDirection: 'row',
+    marginVertical: 15,
+    alignItems: 'center',
+  },
+  chewieLogo: {width: 35, height: 35, marginRight: 10},
 });

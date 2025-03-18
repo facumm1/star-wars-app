@@ -17,7 +17,7 @@ interface Props {
   toggleModal: (bool?: boolean) => void;
 }
 
-const spacebg = 'https://cdn.wallpapersafari.com/38/0/tNfnSd.png';
+const spacebg = require('../../../../assets/images/spacebg.jpg');
 
 export const PeopleAppearancesModal = ({
   filmAppearances,
@@ -32,7 +32,7 @@ export const PeopleAppearancesModal = ({
       transparent={true}
       visible={modal}
       onRequestClose={() => toggleModal(false)}>
-      <ImageBackground resizeMode="cover" source={{uri: spacebg}}>
+      <ImageBackground resizeMode="cover" source={spacebg}>
         <View style={{width: '100%', height: '100%'}}>
           <TouchableOpacity
             onPress={() => toggleModal()}

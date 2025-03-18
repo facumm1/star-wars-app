@@ -7,11 +7,11 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {PeopleTypes} from '../../../types/responseTypes';
-import {upperWord} from '../../../util/upperWord';
-import {getContentImage} from '../../../util/getContentImage';
-import {useToggle} from '../../../hooks';
-import {PeopleAppearancesModal} from './PeopleAppearancesModal';
+import {PeopleTypes} from '../../types/responseTypes';
+import {upperWord} from '../../util/upperWord';
+import {getContentImage} from '../../util/getContentImage';
+import {useToggle} from '../../hooks';
+import {PeopleAppearancesModal} from '../organisms/People/PeopleAppearancesModal';
 
 export const PeopleDetails = ({details}: {details: PeopleTypes}) => {
   const {tg: modal, stg: toggleModal} = useToggle(false);

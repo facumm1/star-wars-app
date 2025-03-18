@@ -8,11 +8,11 @@ import {
   View,
 } from 'react-native';
 
-import {FilmTypes} from '../../../types/responseTypes';
-import {FilmTextDetails} from '../../molecules/FilmTextDetails';
-import {useToggle} from '../../../hooks';
+import {FilmTypes} from '../../types/responseTypes';
+import {FilmTextDetails} from '../molecules/FilmTextDetails';
+import {useToggle} from '../../hooks';
 
-import {FilmIntroModal} from './FilmIntroModal';
+import {FilmIntroModal} from '../organisms/Films/FilmIntroModal';
 
 export const FilmDetails = ({details}: {details: FilmTypes}) => {
   const {tg: modal, stg: toggleModal} = useToggle(false);

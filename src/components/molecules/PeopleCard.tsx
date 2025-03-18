@@ -1,3 +1,4 @@
+import {memo} from 'react';
 import {
   Image,
   ImageBackground,
@@ -11,12 +12,12 @@ import {PeopleTypes} from '../../types/responseTypes';
 import {useNavigate} from '../../hooks/useNavigate';
 import {getContentImage} from '../../util/getContentImage';
 
-export const PeopleCard = ({item}: {item: PeopleTypes}) => {
+export const PeopleCard = memo(({item}: {item: PeopleTypes}) => {
   const {navigateTo} = useNavigate();
 
   const {url, nombre} = item;
 
-  // Get image from url
+  // Get image from url id
   const image = getContentImage(url, 'people');
 
   return (
@@ -44,7 +45,7 @@ export const PeopleCard = ({item}: {item: PeopleTypes}) => {
       </ImageBackground>
     </TouchableOpacity>
   );
-};
+});
 
 const styles = StyleSheet.create({
   container: {

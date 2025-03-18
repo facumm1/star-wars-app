@@ -22,7 +22,6 @@ export const ContentDetailsScreen = ({route}: Props) => {
   const {goBackNav} = useNavigate();
   const tabBarHeight = useBottomTabBarHeight();
 
-  //TODO fix types here
   const {tipoContenido} = route.params;
 
   const contentMap = {

@@ -1,4 +1,4 @@
-import {useRef} from 'react';
+import React, {useRef} from 'react';
 import {FlatList} from 'react-native';
 
 import {useFetchFilmsQuery} from '../../../redux/starwarsApi';

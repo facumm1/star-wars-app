@@ -1,3 +1,4 @@
+import {memo} from 'react';
 import {
   Image,
   ImageBackground,
@@ -11,9 +12,11 @@ import {PlanetTypes} from '../../types/responseTypes';
 import {useNavigate} from '../../hooks/useNavigate';
 import {getContentImage} from '../../util/getContentImage';
 
-export const PlanetCard = ({item}: {item: PlanetTypes}) => {
+export const PlanetCard = memo(({item}: {item: PlanetTypes}) => {
   const {navigateTo} = useNavigate();
   const {url, nombre} = item;
+
+  // Get image from url id
   const image = getContentImage(url, 'planet');
 
   return (
@@ -41,7 +44,7 @@ export const PlanetCard = ({item}: {item: PlanetTypes}) => {
       </ImageBackground>
     </TouchableOpacity>
   );
-};
+});
 
 const styles = StyleSheet.create({
   container: {

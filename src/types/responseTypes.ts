@@ -60,6 +60,8 @@ export type PeopleTypes = {
   imagen?: string;
 };
 
+type ContentTypes = FilmTypes | PlanetTypes | PeopleTypes;
+
 export type ContentRouteType = RouteProp<
   StackParamList,
   'ContentDetailsScreen'
@@ -67,5 +69,5 @@ export type ContentRouteType = RouteProp<
 
 type StackParamList = {
   HomeScreen: undefined;
-  ContentDetailsScreen: undefined;
+  ContentDetailsScreen: ContentTypes;
 };

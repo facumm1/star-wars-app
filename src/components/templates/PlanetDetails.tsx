@@ -6,8 +6,8 @@ import {
   Text,
   View,
 } from 'react-native';
-import {PlanetTypes} from '../../../types/responseTypes';
-import {upperWord} from '../../../util/upperWord';
+import {PlanetTypes} from '../../types/responseTypes';
+import {upperWord} from '../../util/upperWord';
 
 export const PlanetDetails = ({details}: {details: PlanetTypes}) => {
   const {
