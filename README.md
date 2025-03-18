@@ -44,21 +44,21 @@ La ruta donde se generara el archivo APK es `app/build/outputs/apk/release/apk-r
 **Pantalla principal**
 En la pantalla principal, podrás ver una lista de películas, planetas o personajes. Puedes cambiar el contenido que se muestra utlizando los botones de selección en la parte superior de la pantalla.
 
-![Pantalla principal](https://i.imgur.com/l6ZJhbF)
+#[https://i.imgur.com/l6ZJhbF]
 
 Presionando las imagenes, podras ver más detalles sobre la película, planeta o personaje seleccionada.
 
-#[https://imgur.com/E25OGjt] #[https://imgur.com/a/ZltsZ2x]
+#[https://i.imgur.com/E25OGjt] #[https://i.imgur.com/ZltsZ2x]
 
 Tambien puedes consultar el texto de introduccion de la película o las apariciones en ciertas peliculas de los personajes.
 
-#[https://imgur.com/a/X5hkLpK] #[https://imgur.com/a/6hDwePk]
+#[https://i.imgur.com/X5hkLpK] #[https://i.imgur.com/6hDwePk]
 
 **Pantalla de búsqueda**
 En la pantalla de búsqueda, puedes buscar personajes por su nombre. Recuerda que para iniciar la busqueda debes escribir al menos 3 caracteres.
 
-#[https://imgur.com/a/4iLkgAs] #[https://imgur.com/a/yeK0eWy]
+#[https://i.imgur.com/4iLkgAs] #[https://i.imgur.com/yeK0eWy]
 
 Tambien puedes consultar por las apariciones de un personaje en ciertas películas.
 
-#[https://imgur.com/a/6hDwePk]
+#[https://i.imgur.com/6hDwePk]
