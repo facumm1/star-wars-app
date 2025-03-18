@@ -16,6 +16,7 @@ export type FilmTypes = {
   editado: string;
   url: string;
   tipoContenido?: string;
+  poster?: string;
 };
 
 export type PlanetTypes = {
@@ -55,6 +56,7 @@ export type PeopleTypes = {
   editado: string;
   url: string;
   tipoContenido?: string;
+  imagen?: string;
 };
 
 export type ContentRouteType = RouteProp<

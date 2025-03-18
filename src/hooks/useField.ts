@@ -14,13 +14,13 @@ export const useField = () => {
       return;
     }
 
-    if (text.length > 0 && text.length <= 3) {
+    if (text.length > 0 && text.length <= 2) {
       setKeepWriting(true);
       setShowSearchResults(false);
       return;
     }
 
-    if (text.length >= 4) {
+    if (text.length >= 3) {
       setShowSearchResults(true);
       return;
     }

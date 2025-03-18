@@ -11,6 +11,7 @@ import {
 } from '../../types/responseTypes';
 import {useNavigate} from '../../hooks/useNavigate';
 import {FilmDetails} from '../organisms/Films/FilmDetails';
+import {PeopleDetails} from '../organisms/People/PeopleDetails';
 
 interface Props {
   route: ContentRouteType;
@@ -43,20 +44,6 @@ export const ContentDetailsScreen = ({route}: Props) => {
         )}
       </View>
     </SafeAreaView>
-  );
-};
-
-const PeopleDetails = ({details}: {details: PeopleTypes}) => {
-  return (
-    <View>
-      <Text>People details</Text>
-      <Text>Name: {details.nombre}</Text>
-      <Text>Height: {details.altura}</Text>
-      <Text>Mass: {details.peso}</Text>
-      <Text>Hair color: {details.color_pelo}</Text>
-      <Text>Skin color: {details.color_piel}</Text>
-      <Text>Eye color: {details.color_ojos}</Text>
-    </View>
   );
 };
 

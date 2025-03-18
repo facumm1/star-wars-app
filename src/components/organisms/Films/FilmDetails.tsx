@@ -16,6 +16,7 @@ import {FilmIntroModal} from './FilmIntroModal';
 
 export const FilmDetails = ({details}: {details: FilmTypes}) => {
   const {tg: modal, stg: toggleModal} = useToggle(false);
+  const {poster, apertura, episodio, titulo} = details;
 
   return (
     <ImageBackground
@@ -28,7 +29,7 @@ export const FilmDetails = ({details}: {details: FilmTypes}) => {
           <Image
             style={{height: 300, width: '100%'}}
             resizeMode="contain"
-            source={{uri: details.poster}}
+            source={{uri: poster}}
           />
         </View>
 
@@ -40,9 +41,9 @@ export const FilmDetails = ({details}: {details: FilmTypes}) => {
         </TouchableOpacity>
 
         <FilmIntroModal
-          apertura={details.apertura}
-          episodio={details.episodio}
-          titulo={details.titulo}
+          apertura={apertura}
+          episodio={episodio}
+          titulo={titulo}
           modal={modal}
           toggleModal={toggleModal}
         />

@@ -9,17 +9,17 @@ export const starwarsApi = createApi({
   baseQuery: fetchBaseQuery({baseUrl}),
   endpoints: builder => ({
     fetchFilms: builder.query({
-      query: () => '/films',
+      query: () => '/films/?page=1',
       transformResponse: (res: {results: Array<FilmTypes>}) =>
         translateApiAttributes(res.results, 'film'),
     }),
     fetchPlanets: builder.query({
-      query: () => '/planets',
+      query: () => '/planets/?page=1',
       transformResponse: (res: {results: Array<PlanetTypes>}) =>
         translateApiAttributes(res.results, 'planet'),
     }),
     fetchPeople: builder.query({
-      query: () => '/people',
+      query: () => '/people/?page=1',
       transformResponse: (res: {results: Array<PeopleTypes>}) =>
         translateApiAttributes(res.results, 'people'),
     }),

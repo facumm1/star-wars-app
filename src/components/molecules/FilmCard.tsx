@@ -2,10 +2,7 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 import {FilmTypes} from '../../types/responseTypes';
 import {useNavigate} from '../../hooks/useNavigate';
-import {filmImages} from '../../util/images';
-
-const imageNotAvailable =
-  'https://mint.fiu.edu/wp-content/uploads/2021/10/image-not-available.jpg';
+import {filmImages, imageNotAvailable} from '../../util/images';
 
 export const FilmCard = ({item}: {item: FilmTypes}) => {
   const {navigateTo} = useNavigate();
@@ -41,7 +38,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     alignSelf: 'center',
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#000',
     borderRadius: 20,
     margin: 10,
     maxWidth: '45%',
