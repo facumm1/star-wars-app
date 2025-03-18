@@ -5,7 +5,7 @@ import {useBottomTabBarHeight} from '@react-navigation/bottom-tabs';
 
 import {useField, useDebouncedValue} from '../../hooks';
 import {KeepWritingText} from '../atoms/KeepWritingText';
-import {SearchedPeopleList} from '../organisms/SearchedPeopleList';
+import {SearchedPeopleList} from '../organisms';
 import {SearchBar} from '../molecules/SearchBar';
 
 export const SearchScreen = () => {

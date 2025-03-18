@@ -10,6 +10,7 @@ import {
   PlanetTypes,
 } from '../../types/responseTypes';
 import {useNavigate} from '../../hooks/useNavigate';
+import {FilmDetails} from '../organisms/Films/FilmDetails';
 
 interface Props {
   route: ContentRouteType;
@@ -42,20 +43,6 @@ export const ContentDetailsScreen = ({route}: Props) => {
         )}
       </View>
     </SafeAreaView>
-  );
-};
-
-const FilmDetails = ({details}: {details: FilmTypes}) => {
-  return (
-    <View>
-      <Text>Film details</Text>
-
-      <Text>Title: {details.titulo}</Text>
-      <Text>Episode: {details.episodio}</Text>
-      <Text>Director: {details.director}</Text>
-      <Text>Producer: {details.productor}</Text>
-      <Text>Release date: {details.estreno}</Text>
-    </View>
   );
 };
 
@@ -96,6 +83,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#edede9',
   },
   container: {
+    height: '100%',
     width: '100%',
     alignItems: 'center',
   },
@@ -106,5 +94,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 20,
     left: 20,
+    zIndex: 50,
   },
 });

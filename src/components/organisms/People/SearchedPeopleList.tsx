@@ -1,9 +1,9 @@
 import {useRef} from 'react';
 import {FlatList} from 'react-native';
 
-import {useFetchPeopleByNameQuery} from '../../redux/starwarsApi';
-import {Loader, NoCharactersFound} from '../atoms';
-import {PeopleCard} from '../molecules/PeopleCard';
+import {useFetchPeopleByNameQuery} from '../../../redux/starwarsApi';
+import {Loader, NoCharactersFound} from '../../atoms';
+import {PeopleCard} from '../../molecules/PeopleCard';
 
 export const SearchedPeopleList = ({fieldValue}: {fieldValue: string}) => {
   const {data, isFetching} = useFetchPeopleByNameQuery(fieldValue);

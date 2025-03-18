@@ -1,12 +1,12 @@
 import {useRef} from 'react';
 import {FlatList} from 'react-native';
 
-import {useFetchPlanetsQuery} from '../../redux/starwarsApi';
-import {PlanetCard} from '../molecules/PlanetCard';
-import {Loader} from '../atoms/Loader';
+import {useFetchPeopleQuery} from '../../../redux/starwarsApi';
+import {Loader} from '../../atoms/Loader';
+import {PeopleCard} from '../../molecules/PeopleCard';
 
-export const PlanetFlatlist = () => {
-  const {data} = useFetchPlanetsQuery({});
+export const PeopleFlatlist = () => {
+  const {data} = useFetchPeopleQuery({});
   const flatlistRef = useRef<FlatList>(null);
 
   return (
@@ -16,7 +16,7 @@ export const PlanetFlatlist = () => {
       data={data}
       ListEmptyComponent={Loader}
       keyExtractor={({url}) => url}
-      renderItem={({item}) => <PlanetCard item={item} />}
+      renderItem={({item}) => <PeopleCard item={item} />}
     />
   );
 };
