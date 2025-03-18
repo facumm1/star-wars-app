@@ -44,7 +44,7 @@ La ruta donde se generara el archivo APK es `app/build/outputs/apk/release/apk-r
 **Pantalla principal**
 En la pantalla principal, podrás ver una lista de películas, planetas o personajes. Puedes cambiar el contenido que se muestra utlizando los botones de selección en la parte superior de la pantalla.
 
-#[https://imgur.com/a/l6ZJhbF]
+![Pantalla principal](https://imgur.com/a/l6ZJhbF)
 
 Presionando las imagenes, podras ver más detalles sobre la película, planeta o personaje seleccionada.
 
