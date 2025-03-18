@@ -10,8 +10,7 @@ import {
   PlanetTypes,
 } from '../../types/responseTypes';
 import {useNavigate} from '../../hooks/useNavigate';
-import {FilmDetails} from '../organisms/Films/FilmDetails';
-import {PeopleDetails} from '../organisms/People/PeopleDetails';
+import {FilmDetails, PeopleDetails, PlanetDetails} from '../organisms';
 
 interface Props {
   route: ContentRouteType;
@@ -44,23 +43,6 @@ export const ContentDetailsScreen = ({route}: Props) => {
         )}
       </View>
     </SafeAreaView>
-  );
-};
-
-const PlanetDetails = ({details}: {details: PlanetTypes}) => {
-  return (
-    <View>
-      <Text>Planet details</Text>
-      <Text>Name: {details.nombre}</Text>
-      <Text>Rotation period: {details.periodo_rotacion}</Text>
-      <Text>Orbital period: {details.periodo_orbital}</Text>
-      <Text>Diameter: {details.diametro}</Text>
-      <Text>Climate: {details.clima}</Text>
-      <Text>Gravity: {details.gravedad}</Text>
-      <Text>Terrain: {details.terreno}</Text>
-      <Text>Surface water: {details.agua_superficie}</Text>
-      <Text>Population: {details.poblacion}</Text>
-    </View>
   );
 };
 

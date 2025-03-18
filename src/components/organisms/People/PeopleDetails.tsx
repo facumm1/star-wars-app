@@ -4,12 +4,18 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import {PeopleTypes} from '../../../types/responseTypes';
 import {upperWord} from '../../../util/upperWord';
+import {getContentImage} from '../../../util/getContentImage';
+import {useToggle} from '../../../hooks';
+import {PeopleAppearancesModal} from './PeopleAppearancesModal';
 
 export const PeopleDetails = ({details}: {details: PeopleTypes}) => {
+  const {tg: modal, stg: toggleModal} = useToggle(false);
+
   const {
     nombre,
     imagen,
@@ -21,6 +27,10 @@ export const PeopleDetails = ({details}: {details: PeopleTypes}) => {
     color_pelo,
     genero,
   } = details;
+
+  const filmAppearances = details.peliculas.map((movie: string) =>
+    getContentImage(movie, 'film'),
+  );
 
   return (
     <ScrollView style={styles.scrollView}>
@@ -69,6 +79,16 @@ export const PeopleDetails = ({details}: {details: PeopleTypes}) => {
             {upperWord(color_pelo)}
           </Text>
         </View>
+
+        <TouchableOpacity onPress={() => toggleModal()} style={styles.filmsBtn}>
+          <Text style={styles.filmsBtnText}>View film participations</Text>
+        </TouchableOpacity>
+
+        <PeopleAppearancesModal
+          filmAppearances={filmAppearances}
+          modal={modal}
+          toggleModal={toggleModal}
+        />
       </View>
     </ScrollView>
   );
@@ -91,4 +111,19 @@ const styles = StyleSheet.create({
   },
   textTitle: {color: '#000', fontSize: 18, fontWeight: 600},
   text: {color: '#000', fontSize: 18},
+  filmsBtn: {
+    marginTop: 25,
+    marginBottom: 15,
+    paddingHorizontal: 25,
+    paddingVertical: 5,
+    borderRadius: 15,
+    backgroundColor: '#FFF',
+    alignSelf: 'center',
+  },
+  filmsBtnText: {
+    color: '#000',
+    fontSize: 20,
+    fontWeight: '600',
+    textAlign: 'center',
+  },
 });

@@ -8,7 +8,7 @@ export const filmImages: Record<number, string> = {
   7: 'https://static.wikia.nocookie.net/esstarwars/images/2/2e/El_Despertar_de_la_Fuerza_Poster.jpg/revision/latest?cb=20180412014438',
 };
 
-export const peopleImages: Record<number, string>  = {
+export const peopleImages: Record<number, string> = {
   1: 'https://static.wikia.nocookie.net/esstarwars/images/d/d9/Luke-rotjpromo.jpg/revision/latest?cb=20071214134433',
   2: 'https://static.wikia.nocookie.net/esstarwars/images/3/3f/C-3PO_TLJ_Card_Trader_Award_Card.png/revision/latest?cb=20200718062140',
   3: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQInuRAPYvrtiDg7E3eLZZ8b4FJAJ7GaziGezorKdDcbOKAZSsyHJdKtLVNSYrRGctphqzuscL2YNBe-XtwGOjDi2nVHMtCZtMaIstQQg',
@@ -19,6 +19,19 @@ export const peopleImages: Record<number, string>  = {
   8: 'https://static.wikia.nocookie.net/esstarwars/images/3/3f/R5D4-AG.png/revision/latest?cb=20240210190020',
   9: 'https://static.wikia.nocookie.net/esstarwars/images/0/00/BiggsHS-ANH.png/revision/latest?cb=20190110214931',
   10: 'https://static.wikia.nocookie.net/esstarwars/images/4/4e/ObiWanHS-SWE.jpg/revision/latest/scale-to-width-down/536?cb=20120125222904',
+};
+
+export const planetImages: Record<number, string> = {
+  1: 'https://static.wikia.nocookie.net/esstarwars/images/b/b0/Tatooine_TPM.png/revision/latest?cb=20131214162357',
+  2: 'https://static.wikia.nocookie.net/esstarwars/images/4/4a/Alderaan.jpg/revision/latest?cb=20100723184830',
+  3: 'https://static.wikia.nocookie.net/esstarwars/images/d/d4/Yavin-4-SWCT.png/revision/latest?cb=20170924222729',
+  4: 'https://static.wikia.nocookie.net/esstarwars/images/1/1d/Hoth_SWCT.png/revision/latest?cb=20170802030704',
+  5: 'https://static.wikia.nocookie.net/esstarwars/images/1/1c/Dagobah.jpg/revision/latest?cb=20061117132132',
+  6: 'https://static.wikia.nocookie.net/esstarwars/images/2/2c/Bespin_EotECR.png/revision/latest?cb=20170527220537',
+  7: 'https://static.wikia.nocookie.net/esstarwars/images/5/50/Endor_FFGRebellion.png/revision/latest?cb=20170629163352',
+  8: 'https://static.wikia.nocookie.net/esstarwars/images/f/f0/Naboo_planet.png/revision/latest?cb=20190928214307',
+  9: 'https://static.wikia.nocookie.net/esstarwars/images/1/16/Coruscant-EotE.jpg/revision/latest?cb=20221030195452',
+  10: 'https://static.wikia.nocookie.net/esstarwars/images/a/a9/Eaw_Kamino.jpg/revision/latest?cb=20210616005549',
 };
 
 export const imageNotAvailable =

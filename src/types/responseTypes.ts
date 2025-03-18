@@ -35,6 +35,7 @@ export type PlanetTypes = {
   edited: string;
   url: string;
   tipoContenido?: string;
+  imagen?: string;
 };
 
 export type PeopleTypes = {

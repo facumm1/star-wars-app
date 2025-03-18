@@ -1,31 +1,31 @@
 import {
+  FlatList,
+  Image,
   ImageBackground,
   Modal,
-  ScrollView,
   StyleSheet,
-  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
 import Ionicons from '@react-native-vector-icons/ionicons';
+import {useRef} from 'react';
+import {Loader} from '../../atoms';
 
 interface Props {
-  apertura: string;
-  episodio: number;
-  titulo: string;
+  filmAppearances: string[];
   modal: boolean;
   toggleModal: (bool?: boolean) => void;
 }
 
 const spacebg = 'https://cdn.wallpapersafari.com/38/0/tNfnSd.png';
 
-export const FilmIntroModal = ({
-  episodio,
-  titulo,
-  apertura,
+export const PeopleAppearancesModal = ({
+  filmAppearances,
   modal,
   toggleModal,
 }: Props) => {
+  const flatlistRef = useRef<FlatList>(null);
+
   return (
     <Modal
       animationType="fade"
@@ -33,20 +33,25 @@ export const FilmIntroModal = ({
       visible={modal}
       onRequestClose={() => toggleModal(false)}>
       <ImageBackground resizeMode="cover" source={{uri: spacebg}}>
-        <ScrollView style={{width: '100%', height: '100%'}}>
+        <View style={{width: '100%', height: '100%'}}>
           <TouchableOpacity
             onPress={() => toggleModal()}
             style={styles.backBtn}>
             <Ionicons name="arrow-back" size={30} color="#FFF" />
           </TouchableOpacity>
 
-          <View style={{marginTop: 25}}>
-            <Text style={styles.title}>EPISODE {episodio}</Text>
-            <Text style={styles.title}>{titulo}</Text>
-          </View>
-
-          <Text style={styles.crawl}>{apertura}</Text>
-        </ScrollView>
+          <FlatList
+            ref={flatlistRef}
+            style={{width: '100%'}}
+            data={filmAppearances}
+            numColumns={2}
+            ListEmptyComponent={Loader}
+            keyExtractor={url => url}
+            renderItem={({item}) => (
+              <Image source={{uri: item}} style={styles.poster} />
+            )}
+          />
+        </View>
       </ImageBackground>
     </Modal>
   );
@@ -60,13 +65,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     bottom: -25,
   },
-  crawl: {
-    fontSize: 22,
-    color: '#EEC609',
+  poster: {
+    height: 300,
     width: '100%',
-    flex: 1,
-    textAlign: 'center',
-    transform: [{perspective: 800}, {rotateX: '30deg'}],
+    borderRadius: 15,
+    margin: 10,
+    maxWidth: '45%',
   },
   backBtn: {
     borderRadius: 50,

@@ -14,6 +14,7 @@ export const PlanetFlatlist = () => {
       ref={flatlistRef}
       style={{backgroundColor: '#edede9', width: '100%'}}
       data={data}
+      numColumns={2}
       ListEmptyComponent={Loader}
       keyExtractor={({url}) => url}
       renderItem={({item}) => <PlanetCard item={item} />}

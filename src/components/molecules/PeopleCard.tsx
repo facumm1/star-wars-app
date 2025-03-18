@@ -9,16 +9,15 @@ import {
 
 import {PeopleTypes} from '../../types/responseTypes';
 import {useNavigate} from '../../hooks/useNavigate';
-import {imageNotAvailable, peopleImages} from '../../util/images';
+import {getContentImage} from '../../util/getContentImage';
 
 export const PeopleCard = ({item}: {item: PeopleTypes}) => {
   const {navigateTo} = useNavigate();
 
   const {url, nombre} = item;
 
-  // Get image ID and poster
-  const id = url.split('/').filter(Boolean).pop();
-  const image = id && peopleImages[+id] ? peopleImages[+id] : imageNotAvailable;
+  // Get image from url
+  const image = getContentImage(url, 'people');
 
   return (
     <TouchableOpacity
@@ -34,7 +33,7 @@ export const PeopleCard = ({item}: {item: PeopleTypes}) => {
         <Image
           resizeMode="contain"
           source={{uri: image}}
-          style={styles.poster}
+          style={styles.image}
         />
 
         <View style={styles.nameBox}>
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
     width: '100%',
     padding: 10,
   },
-  poster: {
+  image: {
     height: 200,
     width: '100%',
     borderRadius: 15,
