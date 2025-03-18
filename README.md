@@ -1,97 +1,64 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# CODEa UNI - React Native Coding Challenge - Star Wars App
 
-# Getting Started
+Hola! Este es un coding challenge para CODEa UNI, realice el desarrollo de una aplicación de Star Wars usando React Native y la api de SWAPI.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Tecnologias y herramientas utilizadas
 
-## Step 1: Start Metro
+- React Native CLI
+- TypeScript
+- Redux Toolkit
+- React Navigation
+- React Native Vector Icons
+- React Native Safe Area Context
+- SWAPI API: https://swapi.py4e.com/
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## Estructura de la aplicación
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+La aplicación se divide en dos pantallas principales:
 
-```sh
-# Using npm
-npm start
+- **HomeScreen**: Presenta una lista de películas, planetas y personajes.
+- **SearchScreen**: Permite buscar personajes por nombre.
 
-# OR using Yarn
-yarn start
-```
+Para visualizar detalles de cada contenido:
 
-## Step 2: Build and run your app
+- **ContentDetailsScreen**: Presenta detalles de una película, planeta o personaje.
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## Inicialización en modo desarrollo (debug mode)
 
-### Android
+Primero asegurate de realizar la correcta configuracion de React Native CLI: https://reactnative.dev/docs/set-up-your-environment
 
-```sh
-# Using npm
-npm run android
+Para inicializar la aplicación, primero debes clonar el repositorio utilizando la terminal con `git clone https://github.com/facumm1/star-wars-app.git` y luego entrar en la carpeta raíz del proyecto con `cd star-wars-app`.
 
-# OR using Yarn
-yarn android
-```
+Luego instala las dependencias necesarias con `yarn install`.
 
-### iOS
+Una vez finalizada la instalación, para correr la aplicación en tu emulador o movil android, debes correr `yarn android` en la carpeta raíz del proyecto.
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+## Generación de un APK
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+Para generar un APK, a traves de la terminal y desde la carpeta raiz, debes ingresar a la carpeta android con `cd android` y luego correr el comando `./gradlew assembleRelease` para generar el APK.
 
-```sh
-bundle install
-```
+La ruta donde se generara el archivo APK es `app/build/outputs/apk/release/apk-release.apk`. Puedes cambiar libremente el nombre del archivo si lo deseas pero no su formato.
 
-Then, and every time you update your native dependencies, run:
+## Utilización de la aplicación
 
-```sh
-bundle exec pod install
-```
+**Pantalla principal**
+En la pantalla principal, podrás ver una lista de películas, planetas o personajes. Puedes cambiar el contenido que se muestra utlizando los botones de selección en la parte superior de la pantalla.
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+#[https://imgur.com/a/l6ZJhbF]
 
-```sh
-# Using npm
-npm run ios
+Presionando las imagenes, podras ver más detalles sobre la película, planeta o personaje seleccionada.
 
-# OR using Yarn
-yarn ios
-```
+#[https://imgur.com/E25OGjt] #[https://imgur.com/a/ZltsZ2x]
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+Tambien puedes consultar el texto de introduccion de la película o las apariciones en ciertas peliculas de los personajes.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+#[https://imgur.com/a/X5hkLpK] #[https://imgur.com/a/6hDwePk]
 
-## Step 3: Modify your app
+**Pantalla de búsqueda**
+En la pantalla de búsqueda, puedes buscar personajes por su nombre. Recuerda que para iniciar la busqueda debes escribir al menos 3 caracteres.
 
-Now that you have successfully run the app, let's make changes!
+#[https://imgur.com/a/4iLkgAs] #[https://imgur.com/a/yeK0eWy]
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+Tambien puedes consultar por las apariciones de un personaje en ciertas películas.
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+#[https://imgur.com/a/6hDwePk]
